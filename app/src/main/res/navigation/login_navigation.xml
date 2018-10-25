@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/authFragment">
+
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.myapplication.auth.AuthFragment"
+        android:label="AuthFragment"
+        tools:layout="@layout/auth_fragment">
+        <action
+            android:id="@+id/loginAction"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/signupAction"
+            app:destination="@id/signupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.myapplication.auth.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/loginSuccessAction"
+            app:destination="@id/mainActivity"
+            app:launchSingleTop="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.example.myapplication.auth.SignupFragment"
+        android:label="SignupFragment"
+        tools:layout="@layout/signup_fragment" >
+        <action
+            android:id="@+id/signupSuccessAction"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.myapplication.main.MainActivity"
+        android:label="main_activity"
+        tools:layout="@layout/main_activity" />
+</navigation>
